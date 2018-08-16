@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>RegExp对象.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    function test1(){
+    	var pattern1=/^[a-z]{1,5}$/;//直接量语法
+    	var rs1=pattern1.test("abcdef");
+    	console.log(rs1);
+    	
+    	var pattern2=new RegExp("^[a-z]{1,5}$");//""代表了//
+    	var rs2=pattern2.test("abc1");
+    	console.log(rs2);
+    }
+    function test2(){
+    	var str="替我问候你大爷";
+    	var pattern=/[你][大][爷]/;
+    	str=str.replace(pattern,"*_*");
+    	console.log(str);
+    }
+    </script>
+  </head>
+  
+  <body>
+  <!--
+    作者: 漂流哥
+    日期: 2017-6-24
+    
+    JS中提供RegExp类作为正则对象,处理正则要求.
+    注意: 浏览器对构造方法创建的正则对象,元字符支持较弱,甚至不支持[new RegExp("\d")]
+   -->
+    JS程序 <br>
+    <!-- 创建正则对象和基本使用 -->
+    <input type="button" value="确定1" onclick="test1()">
+    <!-- 替换不合法文字 -->
+    <input type="button" value="确定2" onclick="test2()">
+  </body>
+</html>

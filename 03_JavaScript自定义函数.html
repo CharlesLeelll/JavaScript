@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+  <head>
+    <title>自定义函数.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    /*
+     * JS方法:
+     * function 方法名([参数1,参数2,...]){
+     * 方法体
+     * //return 数据;
+     * }
+     * 说明:
+     * 1.JS方法中不能编写 返回值类型的声明,但是可以在方法体中返回数据.
+     * 2.JS属于客户端的动态的,弱类型语言,没有参数类型.
+     * 延伸:
+     * Java方法: 权限 [static/native等等] 返回值类型 方法名([参数类型 参数名,...]){}
+     */
+     function test1(){
+    	 alert("test1....");
+     }
+     function test2(name,age){
+    	 alert("test2....");
+    	 alert(name);
+    	 alert(age);
+     }
+     function test3(){
+    	 alert("test3....");
+    	 return 23;
+     }
+     function temp(){
+    	 var backVal=test3();//方法的返回值,将返回到方法的调用处理
+    	 alert(backVal);
+     }
+     /*
+      * 函数直接量: 降低函数的有效范围,方便使用.
+      * 格式:
+      * var 变量名=function [方法名]([参数1,参数2,...]){
+      * 方法体
+      * }
+      * 说明:
+      * 1.函数直接量语法创建的函数/方法,同普通方法,不能有返回值和参数类型的声明.
+      * 2.函数直接量语法创建的函数,方法名没有任何用途,只是1个称呼,所以可以省略该名称的编写.
+      */
+      var test4=function t(){
+    	  alert("test4.....");
+      }
+      var i=0;
+      function test(){
+    	  i++;
+    	  alert("test!"+i);
+      }
+      function test5(){
+    	alert("test5.....");
+    	//调用test(): 直接调用,new 方法名([值1,..])
+    	//直接调用: 方法名([值1,值2,..]);
+    	test();
+    	test();
+    	//new方式:  将方法看做是1个特殊的对象[没有方法,没有属性]
+    	new test();
+    	
+    	test4();
+    	new test4();
+      }
+      
+      function test6(){
+    	  alert("test6....");
+    	  /*function t1(){
+    	  alert("t1....");
+    	  };*/
+    	 var t1=function (num){
+    	  alert("t1....");
+    	  alert(num);
+    	 };
+    	 t1(2);
+    	 //方法(值)
+      }
+    </script>
+  </head>
+  
+  <body>
+     <!-- 最简单的函数 -->
+   <input type="button" value="确定1" onclick="test1()"><br><!-- 指定点击事件产生后,执行的js代码 -->
+     <!-- 带有参数的函数 -->
+   <input type="button" value="确定2" onclick="test2('aaa',23,1,2)"><br>
+     <!-- 带有返回值的函数 -->
+   <input type="button" value="确定3" onclick="test3()"> <input type="button" value="temp" onclick="temp()"><br>
+     <!-- 函数直接量 -->
+   <input type="button" value="确定4" onclick="test4()"><br>
+     <!-- 函数的调用 -->
+   <input type="button" value="确定5"  onclick="test5()" ><br>
+     <!-- 函数直接量与普通函数[函数嵌套] -->
+   <input type="button" value="确定6"  onclick="test6(66)" ><br>
+  </body>
+</html>

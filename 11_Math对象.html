@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    function test1(){
+    	console.log("E:"+Math.E);
+    	console.log("PI:"+Math.PI);
+    }
+    function test2(){
+    	console.log("-23的绝对值:"+Math.abs(-23));
+    	console.log("大于3.76的最小整数:"+Math.ceil(3.76));
+    	console.log("小于3.76的最大整数:"+Math.floor(3.76));
+    	console.log("2,3中的最大数:"+Math.max(2,3));
+    	console.log("2,3中的最小数:"+Math.min(2,3));
+    	console.log("3的4次方:"+Math.pow(3,4));
+    	console.log("16的平方根:"+Math.sqrt(16));
+    	console.log("2.51四舍五入:"+Math.round(2.51));
+    	console.log("0-1之间的随机值:"+Math.random());
+    	
+    	console.log("0-100之间的随机值:"+Math.ceil(Math.random()*100));
+    }
+    function test3(){
+    	/*
+    	 * 作业: 4位随机验证码,可以含有大小字母和数字
+    	 */
+    }
+    </script>
+  </head>
+  
+  <body>
+  <!--
+    作者: 漂流哥
+    日期: 2017-6-21
+    面向对象的步骤:
+		 1.分析需求中涉及哪些对象
+		 2.抽象现实对象到程序中
+		 3.通过系统模拟现实对象:  new 设计图纸名();//设计图纸名==方法名==类名==对象名
+		 4.操作模拟的对象实现需求
+    
+    如何理解内置对象?
+    JS本身预定义的JS对象,称为内置对象.
+    
+    如何使用内置对象?
+    模拟对象,操作对象.
+    
+    Math对象:
+	 1.不能通过构造方法创建Math对象
+	 2.可以直接使用Math名调用属性和方法
+    
+   -->
+    Math对象测试 <br>
+    <!-- 常用属性 -->
+    <input type="button" value="确定1" onclick="test1()">
+    <!-- 常用方法 -->
+    <input type="button" value="确定2" onclick="test2()">
+    <!-- 随机验证码 -->
+    <input type="button" value="确定3" onclick="test3()">
+  </body>
+</html>

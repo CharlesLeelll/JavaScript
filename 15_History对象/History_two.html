@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>History_two.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+
+	<script type="text/javascript">
+	function  test1(){
+		var nums=history.length;
+		//history.go();//刷新: 可以当做前进和后退
+		//go(参数): 若参数为0或省略,表示刷新[去当前页面]  若参数为-1表示 后退1个历史记录 ,若参数为1,表示前进1个历史记录
+		//go(-3)  go(5)
+		history.go(-1);
+	}
+	function  test2(){
+		history.forward();
+	}
+	function  test3(){
+		history.back();
+	}
+	</script>
+  </head>
+  
+  <body>
+  <!-- 
+  one---two---three: two进入three[前进] 回到one[后退]
+   -->
+  History_two.html页面!<br>
+     <input type="button" value="刷新" onclick="test1()"><br>
+     <input type="button" value="前进" onclick="test2()"><br>
+     <input type="button" value="后退" onclick="test3()"><br>
+     <a href="History_three.html">History_three.html</a>
+  </body>
+</html>

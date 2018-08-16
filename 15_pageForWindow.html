@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>newPage.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		function  test1(){
+			//var closeStatus=window.closed;//判断窗口是否已关闭
+			//console.log(closeStatus);
+			var rs=window.confirm("您确定要关闭窗口吗");
+			if(rs){
+				window.close();//关闭当前窗口
+			}
+		}
+		function  test2(){
+			//window.opener 获得打开当前子窗口的父窗口对象[window]
+			window.opener.location.href="http://www.baidu.com"//改变父窗口的内容
+			window.close();//关闭当前窗口
+			
+		}
+		function test3(){
+			//调整窗口大小: resizeBy()增加XX像素   resizeTo()调整为XX像素
+			//window.resizeBy(100,-50);
+			//window.resizeTo(300,100);
+			//移动窗口: moveBy() moveto()
+			//window.moveBy(300,-50);
+			window.moveTo(300,50);
+		}
+	</script>
+  </head>
+  
+  <body>
+  	操作成功!
+  	<!-- 关闭当前窗口 -->
+  	<input type="button" value="关闭窗口" onclick="test1()">
+  	<!-- 改变父窗口信息 -->
+  	<input type="button" value="关闭窗口[改变父窗口]" onclick="test2()">
+  	<!-- 调整窗口 -->
+  	<input type="button" value="调整窗口" onclick="test3()">
+  </body>
+</html>

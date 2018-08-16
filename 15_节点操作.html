@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>节点操作.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	//引用标签节点的有哪些方式
+	function test1(){
+		//通过标签的id获得   问题:id=XX 的标签有几个   id理论上唯一 
+		var obj1=document.getElementById("num1");
+		//console.log(obj1.innerHTML);
+		//obj1.style.color="red";
+		
+		//通过标签的name属性值获得
+		var inputObjs=document.getElementsByName("myMM");
+		//console.log(inputObjs)
+		//inputObjs[0].value="小丽";
+		//inputObjs[1].style.border="2px red solid";
+		
+		//通过标签名称获得
+		var liObjs=document.getElementsByTagName("li");
+		//console.log(liObjs)
+		liObjs[1].style.color="blue";
+	}
+	
+	//查询节点
+	function test2(){
+		//查询id=num1节点的信息: 节点名 节点类型 节点文本
+		var obj1=document.getElementById("num1");//获得标签对象
+		console.log("标签名:"+obj1.nodeName);//tagName
+		console.log("标签类型:"+obj1.nodeType);
+		console.log("标签内容:"+obj1.nodeValue);
+		//查询id=nameList节点层次关系:
+		var firstObj=obj1.firstChild
+		console.log("节点名:"+firstObj.nodeName);//tagName
+		console.log("节点类型:"+firstObj.nodeType);
+		console.log("节点内容:"+firstObj.nodeValue);
+		
+		var obj2=document.getElementById("nameList");//获得标签对象
+		var allNodes=obj2.childNodes;//获得ol标签的所有子节点
+		console.log(allNodes.length);
+	}
+	//添加标签节点和文本节点
+	function test3(){
+		var olObj=document.getElementById("nameList");//获得标签对象
+		var newLi=document.createElement("li");//创建新标签
+		newLi.id="newli";
+		var newText=document.createTextNode("AA");//创建新文本
+		newLi.appendChild(newText);//<li>AA</li>
+		//olObj.appendChild(newLi);//追加新节点
+		olObj.insertBefore(newLi,olObj.lastChild);
+	}
+	
+	//修改节点
+	function test4(){
+		var olObj=document.getElementById("nameList");//获得标签对象
+		var newLi=document.createElement("li");//创建新标签
+		var newText=document.createTextNode("AA");//创建新文本
+		newLi.appendChild(newText);//<li>AA</li>
+		
+		olObj.replaceChild(newLi,olObj.childNodes[7]);
+	}
+	//删除标签节点
+	function test5(){
+		//var olObj=document.getElementById("nameList");//获得标签对象
+		/*var obj1=document.getElementById("num1");//获得标签对象
+		olObj.removeChild(obj1);*/
+		//var newli=document.getElementById("newli");
+		//olObj.removeChild(newli);
+		
+		var delNode=document.getElementById("nameList");
+		delNode.parentNode.removeChild(delNode);
+	}
+	</script>
+  </head>
+  
+  <body>
+     <!-- 引用节点:  -->
+     <input type="button" value="引用节点" onclick="test1()">
+     <!-- 查询节点: 查询节点信息和节点关系 -->
+     <input type="button" value="查询节点" onclick="test2()">
+     <!-- 添加节点 :添加新的校花校草-->
+     <input type="button" value="添加节点" onclick="test3()">
+     <!-- 修改节点 :添加新的校花校草-->
+     <input type="button" value="修改节点" onclick="test4()">
+     <!-- 删除节点 :删除不好看的校花校草-->
+     <input type="button" value="删除节点" onclick="test5()"><br><br><br>
+     
+     
+     <h1>第N届校花,校草评选大会</h1>
+	   <ol id="nameList">
+	   ol开始
+	   <li id="num1" >凤姐</li>
+	   <li >林志玲</li>
+	   <li >小苍</li>
+	   <li>小强</li>
+	   ol结束
+	   </ol>
+	   请输入你心目中的校花:<input type="text" name="myMM"><br>
+	   请输入你心目中的校草:<input type="text" name="myMM"><br>
+  </body>
+</html>

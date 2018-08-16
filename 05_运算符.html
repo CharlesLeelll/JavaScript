@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>运算符.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	function test1()
+	{
+		var i=1;
+		var j=2;
+		alert(i+j);
+		alert(i-j);
+		alert(i*j);
+		alert(i/j);
+		alert(i%j);
+	}
+	function test2()
+	{
+		var i=1;
+		var j=2;
+		alert(i>j);
+		alert(i<j);
+		alert(i!=j);
+		
+		var data1="22";
+		var data2=22;
+		alert("data1==data2:"+(data1==data2));
+		alert("data1===data2:"+(data1===data2));
+		//同理 != !==
+	}
+	function test3()
+	{
+		
+	}
+	function test4()
+	{
+		
+	}
+	function test5()
+	{
+		var i=2;
+		var j=1;
+		var str= 2<1?"你真聪明!":"笨死了";
+		alert(str);
+	}
+	</script>
+  </head>
+  
+  <body>
+	  <!-- 
+	  算术运算符: 主要用于计算两个数据的结果
+	  常用的符号: + -  *  /   %[求余]
+	  
+	  关系运算符: 用于比较两个数据的大小关系
+	  常用的符号: > < >= <= ==[只比较字面值] !=  ===[比较字面值和类型] !==
+	  
+	  
+	  赋值运算符: 用于将数据 传递给另一个变量
+	  常见的符号: = += -= *= /= %=
+	  
+	  逻辑运算符: 用于表示两个条件的满足关系
+	  常见的符号: &&[且] ||[获得] !{非 取反}
+	  
+	  三目运算符: 
+	  格式: 条件 ? 代码1:代码2;
+	  原理: 当条件为true时,将执行代码1. 否则执行代码2.
+	   -->
+    <input type="button" value="算术运算" onclick="test1()">
+    <input type="button" value="关系运算" onclick="test2()">
+    <input type="button" value="赋值运算" onclick="test3()">
+    <input type="button" value="逻辑运算" onclick="test4()">
+    <input type="button" value="三元运算" onclick="test5()">
+  </body>
+</html>

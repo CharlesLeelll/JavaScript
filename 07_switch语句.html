@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    function test1(){
+    	
+    }
+    </script>
+  </head>
+  
+  <body>
+  <!--
+    作者: 漂流哥
+    日期: 2017-6-14
+    
+    控制语句:
+    为什么使用控制语句?
+    在程序中经常需要 对 数据 或 信息 进行判断,然后进行选择性处理.比如: 判断用户的性别,如果是男 提供 抽烟场所. 否则,提供 空调休息场所.
+    若用户年龄>18,允许用户使用/访问/操作. 否则,提醒/警告/拒绝用户使用或操做.
+    
+  JS中的控制语句:
+  if语句  switch语句.
+  特点: 选择性执行[多个代码块,最多执行1处]
+  
+  switch语句:
+  1.switch中文意思: 开关 交换 调换 控制
+  2.格式:
+  
+  switch(表达式|值){
+  case 值1: 代码1; break;
+  case 值2: 代码2; break;
+  ......
+  [
+  default: 默认代码;
+  ]
+  }
+  说明:
+  1.在java及其他语言中要求,表达式的值必须与 case值 类型相同. 但是 JS不限制,因此JS是弱类型语言.
+  2.在java及其他语言中要求,表达式的值只能为 整数[long除外] 和字符. 但是JS不限制
+  3.在java及其他语言中要求,case值必须唯一. 但是JS不限制
+  原理:
+  JS执行switch代码块时,先执行表达式,然后拿着表达式的值 从上到下 开始 与 case 值匹配.
+  若表达式值与case值相同,将指定此处代码.执行结束后,将结束整个switch代码块.
+  若表达式值与case值不相同,将继续与下一个case执行进行比较.
+  若表达式值与case值都不相同,将执行default代码或结束整个switch代码块.
+   -->
+    switch语句测试 <br>
+    请输入性别:<input type="text" id="sex">
+    <input type="button" value="确定1" onclick="test1()">
+    
+  </body>
+</html>

@@ -1,0 +1,157 @@
+﻿|----DOM和BOM
+BOM是浏览器对象模型,由一系列对象构成,核心对象为window.
+DOM是文档对象模型,由一系列对象构成,核心对象为document.
+注意:DOM已经作为浏览器的一个标准.BOM尚未作为标准,每个浏览器都有自己的BOM实现.
+
+
+|----Window对象
+Window表示浏览器中打开的窗口.
+常用方法和属性:
+属性:
+	document
+	history
+	Navigator
+	Screen
+	location
+	name
+	closed
+	self
+	parent
+	opener
+	top
+方法:
+	alert()		---警告框
+	confirm()	---确认框
+	prompt()	---对话框
+	open()		---新窗口/打开已命名窗口
+	focus()		---键盘焦点于窗口
+	close()		---关闭窗口
+	resizeBy()	---窗口大小调整
+	resizeTo()	---窗口大小设定
+	scrollBy()	---滚动(by 像素)
+	scrollTo()	---滚动到.
+	moveBy()	---移动窗口
+	moveTo()	---移动窗口至
+	setInterval()	---周期调用函数/表达式
+	setTimeout()	---时间后调用函数/表达式
+	dearInterval()	---取消setInterval的timeout
+	dearTimeout()	---取消setTimeout的timeout
+	print()		---打印窗口内容
+
+
+|----Document对象:
+Document包含HTML文档的信息,表示文档对象.通过Document对象,访问HTML页面中的所有元素.
+常用方法:
+	write() / writeln():向文档中写入指定内容
+
+---节点操作:
+
+--引用节点:
+document.getElementById("id值");
+document.getElementsByName("name值");
+document.getElementsByTagName("标签名");
+--查询节点:
+节点对象.nodeName/nodeType/nodeValue: 获得节点名/类型/文本内容[1表示element[元素/标签],2表示attribute[属性],3表示text[文本]
+标签对象.parentNode[parentElement(IE支持)]/firstChild/lastChild/childNodes: 获得当前标签的父节点/第一个子节点/最后一个子节点/所有子节点
+注意: textContent获得标签对之间的所有文本,nodeValue获得当前文本节点对象的文本内容.
+--创建节点:
+document.createElement("节点名");
+被复制标签对象.cloneNode(是否克隆所有后代)
+--添加节点:
+父节点对象.appendChild(子节点对象)
+父节点对象.insertBefore(子节点对象,原节点对象)
+--修改节点:
+父节点对象.replaceChild(新节点对象,旧节点对象)
+--删除节点:
+父节点对象.removeChild(子节点对象). 
+子节点对象.parentNode.removeChild(子节点对象)
+
+---设置/获得标签属性,标签对之间的内容
+
+标签对象.属性名 获得标签对象的某属性值
+标签对象.属性名=值 设置标签对象的某属性值
+标签对象.getAttribute(“属性名");   获得标签对象的某属性值 
+标签对象.setAttribute(“属性名","属性值"); 设置标签对象的某属性值
+标签对象.innerHTML=值 或 标签对象.innerHTML : 设置或获得标签对之间的所有内容[html标签和文本]	
+标签对象.innerText=值 或 标签对象.innerText: 设置或获得标签对之间的文字[不含标签]
+
+---操作CSS:[设置/获得标签的CSS样式]
+操作标签的style属性值:[操作行内式的CSS代码,行内式优先级最高,操作最准确]
+标签对象.style.cssText  获得标签style属性的属性值
+标签对象.style.样式属性名;  获得标签style属性值中指定样式的值,如果没有编写该样式,将返回空.
+标签对象.style.样式属性名=值;  设置标签style属性值中指定样式的值
+注意:CSS中由多个单词和中划线组成的样式名,在JS中省掉中划线,同时中划线后的单词首字母大写.
+CSS样式名:background-image   JS代码:  标签对象.style.backgroundColor="blue" 
+
+操作style标签及外部样式代码:[操作内嵌式,链接式的CSS代码]
+获得所有style标签:  document.styleSheets;   返回值为 存放style标签对象的数组
+获取style对象:  document.styleSheets[索引].rules[索引].style          
+获得第一个style标签中的第一个选择器的style对象:  document.styleSheets[0].rules[0].style
+获得style对象中的所有属性内容:  style对象.cssText
+获得style对象中指定样式的值:  style对象.样式属性="值"  如果没有编写该样式,将返回空.
+
+
+|-----Screen对象
+Screen对象存储了有关客户端显示屏幕的信息.
+常用方法和属性:
+属性:
+	availHeight
+	availWidth
+	bufferDepth
+	colorDepth
+	deviceXDPI
+	deviceYDPI
+	fontSmoothingEnabled
+	height
+	logicalXDPI
+	logicalYDPI
+	pixelDepth
+	updateInterval
+	width
+
+
+|----Location对象
+Location对象存储了有关当前URL的信息.
+常用方法和属性:
+属性:
+	hash
+	host
+	hostname
+	href
+	pathname
+	port
+	portocol
+	search
+方法:
+	assign()	---加载新的文档
+	reload()	---重新加载文档
+	replace()	---新文档替换
+
+
+|-----Navigator对象
+Navigation对象存储了有关浏览器的信息.
+常用方法和属性:
+属性:
+	appCodeName
+	appMinorVersion
+	appName
+	appVersion
+	browserLanguage
+	cookieEnable
+	cpuClass
+	onLine
+	platform
+	systemLanguage
+	userAgent
+	userLanguage
+
+
+|-----History对象
+history对象,用于存储客户端最近访问过的网址.
+常用方法和属性:
+属性:
+	length
+方法:
+	back()		---后退
+	forward()	---前进
+	go()		---前进/后退 至某个页面 [go(2)前进2次]

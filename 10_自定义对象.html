@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>自定义对象.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    /*
+     * User对象:
+     * 属性: name,sex,age,address 等等
+     * 方法: setter getter 等等
+     * JS对象定义格式:
+     * function 类名([参1,参2,...]){
+     * 	this.属性名;  或 this.属性名=值;
+     * 	this.方法名=function([参1,参2,...]){
+     * 
+     * 	}
+     * }
+     * 
+     * 使用自定义对象:
+     * var 对象匿名=new 类名/方法名();
+     * 对象匿名.属性名;
+     * 对象匿名.方法名([值1,值2,..]);
+     */
+     function User(){
+    	 this.name;
+    	 this.sex;
+    	 this.age;
+    	 this.setName=function(name){
+    		 this.name=name;
+    	 }
+    	 this.getName=function(){
+    		 return this.name;
+    	 }
+    	 
+    	 this.setSex=function(sex){
+    		 this.sex=sex;
+    	 }
+    	 this.getSex=function(){
+    		 return this.sex;
+    	 }
+    	 
+    	 this.setAge=function(age){
+    		 this.age=age;
+    	 }
+    	 this.getAge=function(){
+    		 return this.age;
+    	 }
+     }
+     function test(){
+    	 //创建对象
+    	 var obj=new User();
+    	 //操作对象
+    	 obj.setName("张三");
+    	 obj.setSex("男");
+    	 obj.setAge(23);
+    	 //console.log(obj);
+    	 console.log(obj.getName()+","+obj.getSex()+","+obj.getAge());
+     }
+    </script>
+  </head>
+  
+  <body>
+    <!-- 
+    * 作者: 漂流哥
+    * 时间: 2018-3-10
+     -->
+     <!-- 
+     JS中自定义对象的思想同Java,面向对象.
+      -->
+    自定义对象.html<br>
+    <input type="button" value="确定" onclick="test()">
+  </body>
+</html>

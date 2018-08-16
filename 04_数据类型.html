@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+  <head>
+    <title>typeof.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	function test1(){
+		//定义变量: var 变量; var 变量名=值;
+		var i=1.56;
+		//alert(i+" : "+typeof(i));
+		
+		var str='ABC';
+		//alert(str+" : "+typeof(str));
+		
+		var rs=true;
+		//alert(rs+" : "+typeof(rs));
+		
+		var data=null;
+		//alert(data+" : "+typeof(data));
+		
+		var data2;//声明变量,但未赋值
+		//alert(data2+" : "+typeof(data2));
+		//未声明变量
+		alert(typeof(abc));
+	}
+	function test2(num){//参数声明了1个局部变量
+		alert(num);//使用参数时,若未赋值,参数值为undefined
+		alert(abc);//abc的数据类型为undefined,但是此处是使用该变量.
+	}
+	
+	function test3(){
+		//JS程序是按照面向对象的思路,进行开发: 创建/找 对象 ,操作对象
+		//获得文本框对象
+		var textObj=document.getElementById("username");
+		//操作文本框对象,获得文本框的value属性值
+		var textVal=textObj.value;
+		//测试内容的类型
+		alert(textVal+" : "+typeof(textVal));
+		/*
+		 * 文本框默认内容为"".输入的所有数据,都将作为字符串的字面值.
+		 * "23"
+		 * "true"
+		 */
+	}
+	</script>
+  </head>
+  
+  <body>
+  <!-- 
+  JS中的数据划分为: 基本数据类型 和 引用数据类型 [数组 对象]
+	  基本数据类型:
+	  数字(number):[整数,小数]
+	  字符串 (string  String对象)[所有数据都必须被引号包裹]
+	  布尔(boolean): 逻辑值[true false]
+	 null: 表示没有对象或值,由历史原因null被作为object类型,但是依然属于基本类型.
+	 undefined: 声明的变量没有赋值时   或  没有声明的变量
+	 
+	 引用数据类型:
+	 object[对象,数组]
+   -->
+   测试js中的数据类型 <br>
+   
+   <input type="text" id="username"><br>
+   <!-- 测试数据类型 -->
+   <input type="button" onclick="test1()"  value="确定1">
+   <!-- 测试undefined类 及 引用未声明的变量 -->
+   <input type="button" onclick="test2()"  value="确定2">
+   <!-- 测试文本框内容的数据类型 -->
+   <input type="button" onclick="test3()"  value="确定3">
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>数据传递方式</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	function test1(){
+		var i=1;
+		var j;
+		j=i;
+		console.log("i="+i);
+		console.log("j="+j);
+		j=-1;
+		console.log("i="+i);
+		console.log("j="+j);
+	}
+	function test2()
+	{
+		var nums1=[11,22,33,44];
+		var nums2;
+		nums2=nums1;//数组的内存地址
+		console.log("nums1="+nums1);
+		console.log("nums2="+nums2);
+		
+		nums2[0]=-1;
+		console.log("nums1="+nums1);
+		console.log("nums2="+nums2);
+	}
+	</script>
+  </head>
+  
+  <body>
+  <!-- 
+  JS的数据类型: 基本数据类型[number,string,boolean,undefined]   引用数据类型[object(数组,对象)]
+  	基本数据类型都属于值传递.
+  	引用数据类型都属于址传递.
+  	址传递和值传递区别:
+  	1.值传递传递的是变量含有的具体值[普通数据]
+  	2.址传递传递的是变量含有的内存地址.
+  	3.无论址传递或值传递,传递的都是一种数据.
+   -->
+   <!-- 测试值传递 -->
+   <input type="button" value="确定1" onclick="test1()">
+   <!-- 测试址传递 -->
+   <input type="button" value="确定2" onclick="test2()">
+  </body>
+</html>

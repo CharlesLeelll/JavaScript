@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>window.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		function test1(){
+			/*//弹出1个警告框: 只含有1个确定按钮
+			window.alert("内存不足!");
+			alert("你想死吗");
+			//弹出提醒框: 含有1个确定按钮,1个取消按钮. 若点击确定按钮返回true,否则返回false
+			var rs=window.confirm("您确定要删除吗?");
+			if(rs){
+				alert("删除成功!");
+			}else{
+				alert("暂不删除!");
+			}
+			//弹出交互窗口: 含有1个确定按钮,1个取消按钮,1个输入框. 若点击确定按钮返回输入框的内容,否则null.
+			var sex=window.prompt("请输入您的性别:","未知");//参1: 提醒信息   参2: 输入框默认值
+			if(sex=='男'){
+				alert("帅哥!");
+			}else{
+				alert("美女!");
+			}*/
+			
+			//弹出含有网页内容的窗口: open
+			window.open("pageForWindow.html","","width=500px,height=300px,top=200px,left=300px");//参1: 窗口显示的网页   参2: 窗口名[框架集]  参3:窗口特征
+		}
+		function  temp(){
+			alert("我是temp()!");
+		}
+		function test2(){
+			//timeout=window.setTimeout("temp()",3000);//创建定时器对象
+			interval=window.setInterval("temp()",2000);//创建定时器对象
+		}
+		
+		function test3(){
+			//window.clearTimeout(timeout);//参数实质就是 定时器对象
+			window.clearInterval(interval);
+		}
+	</script>
+  </head>
+  
+  <body>
+    Window对象测试 <br>
+    <!-- 弹出窗口和关闭窗口 -->
+    <input type="button" value="窗口" onclick="test1()">
+    <!-- 延迟或定时执行 -->
+    <input type="button" value="延迟执行" onclick="test2()">
+    <!-- 取消延迟或定时执行 -->
+    <input type="button" value="取消执行" onclick="test3()">
+  </body>
+</html>

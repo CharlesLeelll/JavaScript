@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>String对象.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    function test1(){
+    	var str1="张三";
+    	console.log(typeof(str1));
+    	console.log(str1.length);
+    	
+    	var str2=new String("李四");
+    	console.log(str2+":"+str2.length);
+    }
+    function test2(){
+    	var str="abc";
+    	console.log(str);
+    	var temp=str;
+    	str=str+"123";
+    	console.log(str);
+    	
+    	console.log(temp==str);
+    }
+    function test3(){
+    	var str="abc123abc";
+    	console.log("字符个数:"+str.length);
+    	console.log("查询指定索引出的符号:"+str.charAt(2));
+    	console.log("查询指定符号的索引:"+str.indexOf("c",3));
+    	
+    }
+    function test4(){
+    	var str="abc123abc";
+    	str=str.replace("123","--");
+    	console.log(str);
+    	
+    	str=str.replace("--","");
+    	console.log(str);
+    }
+    function test5(){
+    	var str="abc";
+    	str=str+"def";
+    	console.log(str);
+    	
+    	str=str.concat("123","#$%");
+    	console.log(str);
+    }
+    function test6(){
+    	var str="abc123";
+    	console.log(str.toUpperCase());
+    }
+    function test7(){
+    	var str="abc123abc";
+    	var sliceStr=str.slice(-5,-1);
+    	console.log(sliceStr);
+    	var substr=str.substr(3,3);
+    	console.log(substr);
+    	
+    	var subStringStr=str.substring(0,3);
+    	console.log(subStringStr);
+    }
+    function test8(){
+    	var str="abc123abc";
+    	var allChar=str.split("");
+    	console.log(allChar);
+    	
+    	var allName="张三,李四,王五,AA";
+    	var names=allName.split(",");
+    	console.log(names);
+    	
+    	//延伸: 对指定字符串 进行反转操作
+    	var mystr="123abc456";
+    	var rs=mystr.split("").reverse().join("");//6,5,4,c,
+    	console.log(rs);
+    	
+    }
+    </script>
+  </head>
+  
+  <body>
+  <!--
+    作者: 漂流哥
+    日期: 2017-6-19
+    
+    字符串: 指多个符号.[一段话,一个单词等等]
+    字符: 指一个符号.
+    JS中不区分字符和字符串,都称为字符串.JS中使用String类表示字符串对象.[string表示JS的基本数据类型]
+    
+    String和string的关系:
+    1.String表示JS内置的字符串对象
+    2.string表示JS的基本数据类型
+    3.String是string的封装类.
+    
+    如何理解封装类:
+    JS属于面向/基于对象的语言,所有的操作都要围绕对象进行.[对象.属性; 对象.方法名()]
+    JS的基本数据类型既不是对象,也不面向对象. 为了更加彻底的面向对象,JS为基本数据类型提供封装类[类/图纸].
+    基本数据类型: string number boolean [null undefined]
+    封装类: String Number Boolean
+    
+    var str="张三";
+    var age=23;
+    var merry=false;
+    以上数据,是否创建了对象?
+    创建对象的格式: new 设计图纸名()
+       -->
+    String对象测试 <br>
+    <!-- 创建String对象 和 length属性 -->
+    <input type="button" value="确定1" onclick="test1()">
+    <!-- 测试字符串值固定,不能更改 -->
+    <input type="button" value="确定2" onclick="test2()">
+    <!-- 查询操作 -->
+    <input type="button" value="确定3" onclick="test3()">
+    <!-- 修改或删除操作 -->
+    <input type="button" value="确定4" onclick="test4()">
+    <!-- 添加操作 -->
+    <input type="button" value="确定5" onclick="test5()">
+    <!-- 大小写转换 -->
+    <input type="button" value="确定6" onclick="test6()">
+    <!-- 截取字符串 -->
+    <input type="button" value="确定7" onclick="test7()">
+    <!-- 拆分字符串 -->
+    <input type="button" value="确定8" onclick="test8()">
+  </body>
+</html>

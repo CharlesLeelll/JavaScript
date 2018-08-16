@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>数组.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	function test1()
+	{
+		var datas=new Array(3);
+		alert(datas);
+		datas[0]=1;
+		datas[1]="AA";
+		datas[2]=true;
+		datas[5]="hahahaha";
+		alert(datas);
+		//JS的数组大小指定没有意义,因此JS数组是动态增长的.
+	}
+	function test2()
+	{
+		var datas=new Array();
+		datas[0]=1;
+		datas[1]="AA";
+		datas[2]=true;
+		datas[5]="hahahaha";
+		alert(datas);
+	}
+	function test3()
+	{
+		var datas=new Array("AA","BB","CC");
+		datas[5]="hahahaha";
+		alert(datas);
+	}
+	function test4()
+	{ 
+		var datas=["AA","BB","CC"];//int[] nums={11,222}
+		datas[5]="hahahaha";
+		alert(datas);
+	}
+	</script>
+  </head>
+  
+  <body>
+  <!-- 
+	  为什么使用数组?
+	  张三 男 郑州, 李四 男 大同, 王五 女 北京, 赵六 女 上海. 属于一个班级,请使用合适的容器存放他们.
+	  以上需求需要同一个容器存放多个数据,JS中提供了数组解决.
+	  
+	  数组: 可以同时存放多个不同类型的数据.
+	  数组使用:
+	  A. var 数组名=new Array(元素个数);
+	  说明:
+	  1.JS数组中元素个数的指定没有任何意义.
+	  2.JS数组可以动态改变元素个数,若没有设置元素的值,新增的元素之为"".
+	  
+	  B. var 数组名=new Array();
+	  说明:
+	  1.JS元素个数没有意义,JS支持动态增长.
+	  
+	  C. var 数组名=new Array(元素1,元素2,..);
+	  说明:
+	  1.以上方式称为动态初始化.
+	  
+	  D. var 数组名=[元素1,元素2,..];
+   -->
+  	<!-- 普通方式: 指定元素个数  [数组CURP操作及格式]-->
+	<input type="button" value="确定1" onclick="test1()">
+	<!-- 普通方式: 不指定元素个数 -->
+	<input type="button" value="确定2" onclick="test2()">
+	<!-- 创建并指定各元素值 -->
+	<input type="button" value="确定3" onclick="test3()">
+	<!-- 数组直接量 -->
+	<input type="button" value="确定4" onclick="test4()">
+	</body>
+	
+	document.writeln()  等价于Java的System.out.println()
+	document.write() 等价于Java的System.out.print()
+</html>

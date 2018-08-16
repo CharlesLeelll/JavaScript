@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Location.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	function test(){
+		//href: 获得当前地址栏中的URL地址
+		//var nowHref=location.href;
+		//console.log(nowHref);
+		//location.href="pageForLocation.html";
+		//location.assign("pageForLocation.html");//加载指定网页
+		
+		//location.replace("pageForLocation.html");//加载新内容,替换当前网页的内容: 不产生新的历史记录
+		
+		location.reload();
+	}
+	</script>
+  </head>
+  
+  <body>
+  Location对象测试<br>
+  	<!-- 测试location对象的href属性和其他方法 -->
+    <input type="button" value="确定" onclick="test()"><br>
+    <a href="pageForLocation.html">pageForLocation.html</a>
+  </body>
+</html>

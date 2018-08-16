@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+	<head>
+		<title>变量和常量.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<script type="text/javascript">
+		function test1() {
+			var i=1;
+			alert(i);
+			
+			var j;
+			j="张三";
+			alert(j);
+		}
+		function test2() {
+			var data;
+			data=12;
+			alert(data);
+			data="AA";//弱类型语言
+			alert(data);
+		}
+		
+		/********************start**********************/
+		var t_var3=33;//全局代码,在加载网页时就会执行
+		t_var33=55;
+		function t() {
+			var t_var1 = "我是t中的变量t_var1";
+			t_var2 = "我是t中的变量t_var2";
+			
+		}
+		/********************end**********************/
+		
+		function test3() {
+			/*alert(t_var3);//引用全局变量
+			alert(t_var33);*/
+			
+			//alert(t_var1);
+			alert(t_var2);
+		}
+		
+		
+		function test4() {
+			const data=23;
+			alert(data);
+			//data=10;
+			alert(data);
+		}
+		</script>
+	</head>
+
+	<body>
+	<!-- 
+	 变量的使用:
+	 A. var 变量名=值;
+	 说明:
+	 1. var是JS中的关键字,表示"变量[variable]". 用于创建变量[声明变量]
+	 2. JS是弱类型语言,同一个变量中可以存放多种类型的数据.
+	 3. 以上代码表示创建容器,并将指定数据放入容器中
+	 
+	 B. var 变量名; //创建变量[容器]
+	 	变量名=值; //将指定数据 存放到 容器中
+	 说明:
+	 1. 以上方式先创建变量,然后根据需求 存放数据.
+	 
+	 延伸:
+	 java属于强制类型: 变量类型 变量名=值;
+	 
+	 
+	 
+	 变量分类:
+	 根据变量的有效范围,分为: 全局变量[成员变量]  和  局部变量
+	 
+	 全局变量: 变量可以在任何方法体中被访问/引用
+	 要求: 变量必须编写在方法体之外 或 变量不使用var修饰
+	 
+	 局部变量: 变量只能在当前方法体中被访问/引用
+	 要求: 变量必须编写在方法体之内,且使用var修饰
+	 
+	 
+	 常量: 可以存放一个数据,数据确定以后将不能更改.
+	 格式: const 常量名=值;
+	 说明: JS有常量的支持,但是不同浏览器兼容不同.
+	 -->
+		<!-- 变量的创建方式 -->
+		<input type="button" value="确定1" onclick="test1()">
+		<br>
+		<!-- 操作变量 -->
+		<input type="button" value="确定2" onclick="test2()">
+		<br>
+		<!-- 编写局部变量和全局变量 -->
+		<input type="button" value="确定3" onclick="test3()">
+		<br>
+		<!-- 辅助按钮: 测试全局变量和局部变量 -->
+		<input type="button" value="确定4" onclick="t()">
+		<br>
+		<!-- 编写常量,常量的特性和兼容性 -->
+		<input type="button" value="常量" onclick="test4()">
+		<br>
+	</body>
+</html>

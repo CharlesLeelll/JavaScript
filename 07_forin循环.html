@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>forin循环.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    function test1(){
+    	var nums=[11,22,33,'AA','BB'];
+    	//var names=['a':'张三','b':'李四','c':'王五'];
+    	for(var i in nums){
+    		console.log(nums[i]);
+    	}
+    }
+    </script>
+  </head>
+  
+  <body>
+    for in循环测试. <br>
+    <!-- 
+    为什么使用循环语句?
+    为了提高代码利用率及减轻开发,JS提供了循环语句用于重复执行某些代码.
+    
+    JS含有哪些循环语句?
+    for循环, for in循环[forEach循环],while循环 ,do while循环,with循环[自学]
+    
+    for in循环: [实际就是forEach]
+           格式:
+    for(var 变量名 in 数组/集合){
+    循环体
+    }
+          原理:
+     	从数组/集合中取出1个元素,将元素的名字/索引赋给该变量.
+     	然后执行循环体.当循环体执行结束后,取出下一个元素并将其名字赋给变量,接着执行循环体.
+     	依次类推,直到取出最后1个元素为止.
+          用途:
+                    专门用于输出集合或数组中的所有数据.
+     -->
+     <!-- 演示for in循环 使用方式 -->
+     <input type="button" value="确定1" onclick="test1()">
+  </body>
+</html>

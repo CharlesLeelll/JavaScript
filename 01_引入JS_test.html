@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Test.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    /* 该标签对之间,只能编写JS代码,遵循JS语法 */
+    function test(){
+    	alert("按钮2被点击2222!");
+    }
+    </script>
+    <script type="text/javascript" src="linkJS.js">
+    /* 若script标签用于引入外部的JS文件,那么该标签对之间将不能编写其他JS代码,否则代码无效 */
+    /*function test3(){
+    	alert("按钮3333被点击!");
+    }*/
+    </script>
+    
+    <script type="text/javascript">
+    /*
+     * JS属于事件驱动语言,需要发生某事件后才会执行相应代码.
+     */
+     /* 以下代码属于 全局代码
+      * 当浏览器开始解析网页的JS代码时,会先创建1个全局对象---global
+      * script标签中定义的JS方法/函数,将作为global对象的方法
+      * script标签中定义的非JS方法代码,将作为global对象的全局代码
+      * 
+      * 全局代码会在浏览器解析JS时[创建global对象]立马执行
+      */
+    	//alert("测试位置");
+    	//获得文本框对象
+    	//var textObj=document.getElementById("text");
+    	//alert(textObj.value);//获得文本框对象的value属性值
+    	function t(){
+    	var textObj=document.getElementById("text");
+    	alert(textObj.value);//获得文本框对象的value属性值
+    	}
+    </script>
+    
+  </head>
+  
+  <body onload="t()"><!-- onload当页面加载完成后,执行指定的JS代码 -->
+ 
+    引入JS测试 <br>
+    <!-- 行内式: 直接在标签中,设置指定的事件并编写代码 
+    <标签名 事件名="javascript: JS代码:遵循JS语法" >
+    -->
+    <input type="button" value="确定1" onclick="javascript:alert('按钮1被点击!')">
+    <!-- 内嵌式: 编写script标签,在该标签中编写js代码 -->
+    <input type="button" value="确定2" onclick="test()">
+    <!-- 链接式: 编写script标签,设置src属性引入外部的JS文件 -->
+    <input type="button" value="确定3" onclick="test2()">
+    <br>
+    
+     
+    <!-- script存放位置的区别 -->
+    <input type="text" value="abc" id="text">
+
+  </body>
+  
+</html>

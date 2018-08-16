@@ -1,0 +1,16 @@
+﻿User对象:
+     	属性: name,sex,age,address 等等
+     	方法: setter getter 等等
+     	JS对象定义格式:
+     	function 类名([参1,参2,...]){
+
+     	this.属性名;  或 this.属性名=值;
+     	this.方法名=function([参1,参2,...]){
+     
+		}
+	}
+      
+	使用自定义对象:
+	var 对象匿名=new 类名/方法名();
+	对象匿名.属性名;
+	对象匿名.方法名([值1,值2,..]);
